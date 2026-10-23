@@ -1,5 +1,8 @@
 # DRIP-R: A Benchmark for Decision-Making and Reasoning Under Real-World Policy Ambiguity in the Retail Domain
 
+[![Dataset on Hugging Face](https://img.shields.io/badge/🤗%20Dataset-DRIP--R-yellow)](https://huggingface.co/datasets/hsuvaskakoty/DRIP-R)
+
+
 ![DRIP-R benchmark overview](assets/benchmark_overview_v4%20%281%29.png)
 
 Figure 1. Overview of the DRIP-R benchmark components and workflow.
@@ -17,7 +20,7 @@ so the pipeline can be run end-to-end immediately.
 
 ---
 
-## 1. Setup
+## Setup
 
 ```bash
 pip install -r requirements.txt
@@ -30,7 +33,17 @@ agent / customer models). Optional: `ANTHROPIC_API_KEY` if you set
 
 ---
 
-## 2. Run the agent simulation
+## Dataset
+
+The benchmark data (400 scenarios, 40 tasks, 10 personas) is hosted on Hugging Face: [hsuvaskakoty/DRIP-R](https://huggingface.co/datasets/hsuvaskakoty/DRIP-R).
+
+```python
+from datasets import load_dataset
+scenarios = load_dataset("hsuvaskakoty/DRIP-R", "scenarios", split="train")
+```
+---
+
+## Run the agent simulation
 
 ```bash
 python src/agent/run.py \
@@ -72,7 +85,7 @@ discard previous output.
 
 ---
 
-## 3. Run the evaluation
+## Run the evaluation
 
 ```bash
 python src/evaluator_concise/evaluator_concise.py \
@@ -120,7 +133,7 @@ Defined in `src/evaluator_concise/metrics.py`:
 Figure 2. Overview of the DRIP-R benchmark evaluation metrics.
 
 
-## 4. Layout
+## Layout
 
 ```
 drip-r-bench/
@@ -152,7 +165,7 @@ drip-r-bench/
 
 ---
 
-## 5. Scenario format
+## Scenario format
 
 Each line of the input JSONL is one scenario. Required keys:
 
@@ -170,7 +183,11 @@ See `data/sample_scenarios.jsonl` for a complete example.
 ## Citation
 If you use this codebase in your research, please cite: TBD
 ```
-
-
-
+@misc{borkakoty2026dripr,
+  title         = {{DRIP-R}: A Benchmark for Decision-Making and Reasoning Under Real-World Policy Ambiguity in the Retail Domain},
+  author        = {Borkakoty, Hsuvas and Pohl, Sebastian and Wang, Cheng and Chen, Bei and Hou, Yufang},
+  year          = {2026},
+  eprint        = {2605.07699},
+  archivePrefix = {arXiv}
+}
 ```
