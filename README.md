@@ -3,7 +3,7 @@
 [![Dataset on Hugging Face](https://img.shields.io/badge/🤗%20Dataset-DRIP--R-yellow)](https://huggingface.co/datasets/hsuvaskakoty/DRIP-R)
 
 
-![DRIP-R benchmark overview](assets/benchmark_overview_v4%20%281%29.png)
+![DRIP-R benchmark overview](assets/emnlp_DRIP_v1.jpg)
 
 Figure 1. Overview of the DRIP-R benchmark components and workflow.
 
